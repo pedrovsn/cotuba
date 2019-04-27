@@ -1,20 +1,20 @@
-package cotuba.epub;
+package cotuba.application;
 
 import cotuba.domain.Ebook;
-import cotuba.pdf.GeradorPDF;
-import cotuba.pdf.GeradorPDFImpl;
+import cotuba.epub.GeradorEPUBComEpublib;
+import cotuba.pdf.GeradorPDFComIText;
 
 public interface GeradorEbook {
 
+    void gera(Ebook ebook);
+
     static GeradorEbook cria(String formato){
         if ("pdf".equals(formato)) {
-            return GeradorPDF.cria();
+            return new GeradorPDFComIText();
         } else if ("epub".equals(formato)) {
-            return GeradorEPUB.cria();
+            return new GeradorEPUBComEpublib();
         } else {
             throw new RuntimeException("Formato do ebook inválido: " + formato);
         }
     }
-
-    void gera(Ebook ebook);
 }

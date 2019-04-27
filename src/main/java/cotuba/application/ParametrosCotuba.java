@@ -1,4 +1,10 @@
 package cotuba.application;
 
-public interface CotubaParametros {
+import java.nio.file.Path;
+
+public interface ParametrosCotuba {
+
+    Path getDiretorioDosMD();
+    String getFormato();
+    Path getArquivoSaida();
 }

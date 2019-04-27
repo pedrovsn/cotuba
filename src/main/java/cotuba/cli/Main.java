@@ -1,22 +1,19 @@
-package cotuba;
+package cotuba.cli;
 
 import cotuba.application.Cotuba;
-
-import java.nio.file.Path;
 
 public class Main {
 
 	public static void main(String[] args) {
-		LeitorDeOpcoes leitorDeOpcoes = new LeitorDeOpcoes(args);
+		LeitorDeOpcoesCLI leitorDeOpcoes = new LeitorDeOpcoesCLI(args);
 
-		Path diretorioDosMD = leitorDeOpcoes.getDiretorioDosMD();
-		String formato = leitorDeOpcoes.getFormato();
-		Path arquivoDeSaida = leitorDeOpcoes.getArquivoDeSaida();
 		boolean modoVerboso = leitorDeOpcoes.isModoVerboso();
 
 		try {
 			Cotuba cotuba = new Cotuba();
-			cotuba.executa(formato, diretorioDosMD, arquivoDeSaida);
+			cotuba.executa(leitorDeOpcoes);
+
+			System.out.println("Arquivo gerado com sucesso: " + leitorDeOpcoes.getArquivoSaida());
 		} catch (Exception ex) {
 			System.err.println(ex.getMessage());
 			if (modoVerboso) {
@@ -25,5 +22,4 @@ public class Main {
 			System.exit(1);
 		}
 	}
-
 }
