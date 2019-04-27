@@ -5,6 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import cotuba.application.ParametrosCotuba;
+import cotuba.domain.FormatoEbook;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -90,8 +91,8 @@ public class LeitorDeOpcoesCLI implements ParametrosCotuba {
 	}
 
 	@Override
-	public String getFormato() {
-		return formato;
+	public FormatoEbook getFormato() {
+		return FormatoEbook.valueOf(this.formato);
 	}
 
 	@Override

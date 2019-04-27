@@ -9,7 +9,7 @@ public class Ebook {
 
     private List<Capitulo> capitulos;
 
-    private String formato;
+    private FormatoEbook formatoEbook;
 
     private Path arquivoSaida;
 
@@ -29,12 +29,12 @@ public class Ebook {
         this.capitulos = capitulos;
     }
 
-    public String getFormato() {
-        return formato;
+    public FormatoEbook getFormatoEbook() {
+        return formatoEbook;
     }
 
-    public void setFormato(String formato) {
-        this.formato = formato;
+    public void setFormatoEbook(FormatoEbook formatoEbook) {
+        this.formatoEbook = formatoEbook;
     }
 
     public Path getArquivoSaida() {

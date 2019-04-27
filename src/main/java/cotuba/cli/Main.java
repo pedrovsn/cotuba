@@ -5,15 +5,15 @@ import cotuba.application.Cotuba;
 public class Main {
 
 	public static void main(String[] args) {
-		LeitorDeOpcoesCLI leitorDeOpcoes = new LeitorDeOpcoesCLI(args);
+		LeitorDeOpcoesCLI opcoesCLI = new LeitorDeOpcoesCLI(args);
 
-		boolean modoVerboso = leitorDeOpcoes.isModoVerboso();
+		boolean modoVerboso = opcoesCLI.isModoVerboso();
 
 		try {
 			Cotuba cotuba = new Cotuba();
-			cotuba.executa(leitorDeOpcoes);
+			cotuba.executa(opcoesCLI);
 
-			System.out.println("Arquivo gerado com sucesso: " + leitorDeOpcoes.getArquivoSaida());
+			System.out.println("Arquivo gerado com sucesso: " + opcoesCLI.getArquivoSaida());
 		} catch (Exception ex) {
 			System.err.println(ex.getMessage());
 			if (modoVerboso) {
