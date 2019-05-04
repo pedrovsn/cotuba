@@ -2,6 +2,7 @@ package cotuba.md;
 
 import cotuba.application.RenderizadorMDParaHTML;
 import cotuba.domain.Capitulo;
+import cotuba.tema.AplicadorTema;
 import org.commonmark.node.AbstractVisitor;
 import org.commonmark.node.Heading;
 import org.commonmark.node.Node;
@@ -57,6 +58,9 @@ public class RenderizadorMDParaHTMLComCommonMark implements RenderizadorMDParaHT
                     HtmlRenderer renderer = HtmlRenderer.builder().build();
                     String html = renderer.render(document);
                     capitulo.setConteudoHtml(html);
+
+                    AplicadorTema tema = new AplicadorTema();
+                    tema.aplica(capitulo);
 
                     capitulos.add(capitulo);
 

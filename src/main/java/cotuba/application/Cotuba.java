@@ -3,6 +3,7 @@ package cotuba.application;
 import cotuba.domain.Capitulo;
 import cotuba.domain.Ebook;
 import cotuba.domain.FormatoEbook;
+import cotuba.plugin.Plugin;
 
 import java.nio.file.Path;
 import java.util.List;
@@ -26,5 +27,7 @@ public class Cotuba {
 
         GeradorEbook geradorEbook = GeradorEbook.cria(ebook);
         geradorEbook.gera(ebook);
+
+        Plugin.acoesPosGeracao(ebook);
     }
 }
