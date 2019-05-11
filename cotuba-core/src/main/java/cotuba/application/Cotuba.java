@@ -1,6 +1,5 @@
 package cotuba.application;
 
-import cotuba.cli.ImprimeNoConsole;
 import cotuba.domain.Capitulo;
 import cotuba.domain.Ebook;
 import cotuba.domain.FormatoEbook;
@@ -21,11 +20,7 @@ public class Cotuba {
         RenderizadorMDParaHTML renderizadorMDParaHtml = RenderizadorMDParaHTML.cria();
         List<Capitulo> capitulos = renderizadorMDParaHtml.renderiza(diretorioDosMD);
 
-        Ebook ebook = new Ebook();
-        ebook.setTitulo("Primeiro ebook pelo Cotuba");
-        ebook.setCapitulos(capitulos);
-        ebook.setArquivoSaida(arquivoSaida);
-        ebook.setFormatoEbook(formato);
+        Ebook ebook = new Ebook("Primeiro ebook pelo Cotuba", capitulos, formato, arquivoSaida);
 
         GeradorEbook geradorEbook = GeradorEbook.cria(ebook);
         geradorEbook.gera(ebook);

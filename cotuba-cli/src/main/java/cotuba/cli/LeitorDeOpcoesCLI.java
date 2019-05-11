@@ -1,8 +1,5 @@
 package cotuba.cli;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 import cotuba.application.ParametrosCotuba;
 import cotuba.domain.FormatoEbook;
@@ -13,6 +10,10 @@ import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class LeitorDeOpcoesCLI implements ParametrosCotuba {
 	private CommandLine cmd;

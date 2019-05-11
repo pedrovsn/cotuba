@@ -11,17 +11,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="cotuba-cli" />
-    <orderEntry type="library" name="Maven: commons-cli:commons-cli:1.4" level="project" />
-    <orderEntry type="library" name="Maven: com.atlassian.commonmark:commonmark:0.11.0" level="project" />
-    <orderEntry type="library" name="Maven: nl.siegmann.epublib:epublib-core:3.1" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.1" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-simple:1.6.1" level="project" />
-    <orderEntry type="library" name="Maven: net.sf.kxml:kxml2:jar-with-dependencies:2.5.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.itextpdf:html2pdf:2.0.0" level="project" />
-    <orderEntry type="library" name="Maven: com.itextpdf:layout:7.1.0" level="project" />
-    <orderEntry type="library" name="Maven: com.itextpdf:kernel:7.1.0" level="project" />
-    <orderEntry type="library" name="Maven: com.itextpdf:io:7.1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.11.2" level="project" />
+    <orderEntry type="module" module-name="cotuba" />
   </component>
 </module>
