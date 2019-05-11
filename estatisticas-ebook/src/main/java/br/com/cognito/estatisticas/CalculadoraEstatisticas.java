@@ -7,11 +7,12 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import java.text.Normalizer;
+import java.util.function.Consumer;
 
 public class CalculadoraEstatisticas implements AoFinalizarGeracao {
 
     @Override
-    public void aposGeracao(Ebook ebook) {
+    public void aposGeracao(Ebook ebook, Consumer<String> consumer) {
         ContagemPalavras contagemPalavras = new ContagemPalavras();
         for(Capitulo capitulo : ebook.getCapitulos()){
             String html = capitulo.getConteudoHtml();
@@ -25,7 +26,13 @@ public class CalculadoraEstatisticas implements AoFinalizarGeracao {
             String[] palavras = texto.split("\\s+");
 
             for(String palavra : palavras){
-//                contagemPalavras.put(palavra);
+                contagemPalavras.adicionaPalavra(palavra.toUpperCase());
+            }
+
+            for(ContagemPalavras.Contagem contagem : contagemPalavras) {
+                String palavra = contagem.getPalavra();
+                Integer ocorrencias = contagem.getOcorrencias();
+                consumer.accept(palavra + ": " + ocorrencias);
             }
         }
     }

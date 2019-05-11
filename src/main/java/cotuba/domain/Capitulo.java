@@ -6,6 +6,11 @@ public class Capitulo implements cotuba.plugin.Capitulo {
 
     private String conteudoHtml;
 
+    public Capitulo(String titulo, String html) {
+        this.titulo = titulo;
+        this.conteudoHtml = html;
+    }
+
     public String getTitulo() {
         return titulo;
     }
